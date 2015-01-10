@@ -1,4 +1,4 @@
-package nrt.font;
+package com.nrt.font;
 
 public class FontCharInfo
 {

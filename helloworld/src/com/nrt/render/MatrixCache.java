@@ -1,7 +1,7 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.opengl.Matrix;
-import nrt.math.Float4x4;
+import com.nrt.math.Float4x4;
 
 public class MatrixCache
 {

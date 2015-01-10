@@ -1,6 +1,6 @@
-package nrt.vmath;
+package com.nrt.vmath;
 
-import nrt.math.*;
+import com.nrt.math.*;
 
 public class Vec3
 {

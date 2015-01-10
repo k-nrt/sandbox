@@ -1,12 +1,12 @@
-package nrt.basic;
+package com.nrt.basic;
 
 import java.io.InputStream;
 import java.io.IOException;
 
-import nrt.helloworld.*;
-import nrt.math.Float3;
-import nrt.math.Float4;
-import nrt.math.Float4x4;
+import com.nrt.helloworld.*;
+import com.nrt.math.Float3;
+import com.nrt.math.Float4;
+import com.nrt.math.Float4x4;
 
 
 public class LoaderBase

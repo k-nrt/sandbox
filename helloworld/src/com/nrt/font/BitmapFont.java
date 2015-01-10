@@ -1,5 +1,5 @@
-package nrt.font;
-import nrt.render.*;
+package com.nrt.font;
+import com.nrt.render.*;
 import java.nio.*;
 import android.opengl.*;
 

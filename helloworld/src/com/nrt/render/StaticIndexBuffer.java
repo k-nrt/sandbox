@@ -1,6 +1,6 @@
-package nrt.render;
+package com.nrt.render;
 
-public class StaticIndexBuffer extends nrt.render.Buffer implements IndexBuffer
+public class StaticIndexBuffer extends com.nrt.render.Buffer implements IndexBuffer
 {
 	@Override
 	public int GetIndexBufferName()

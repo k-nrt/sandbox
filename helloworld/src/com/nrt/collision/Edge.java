@@ -1,7 +1,7 @@
-package nrt.collision;
+package com.nrt.collision;
 
-import nrt.math.Float3;
-import nrt.math.FMath;
+import com.nrt.math.Float3;
+import com.nrt.math.FMath;
 
 public class Edge
 {

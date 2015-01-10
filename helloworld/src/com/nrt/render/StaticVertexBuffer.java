@@ -1,4 +1,4 @@
-package nrt.render;
+package com.nrt.render;
 
 public class StaticVertexBuffer extends Buffer implements VertexBuffer
 {

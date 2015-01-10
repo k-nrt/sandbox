@@ -1,4 +1,4 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.opengl.GLES20;
 
@@ -13,7 +13,7 @@ public class RingIndexBuffer extends RingBuffer implements IndexBuffer
 	public RingIndexBuffer( DelayResourceQueue drq, int size)
 		//throws ThreadForceDestroyException
 	{
-		super( drq, nrt.render.BufferType.Index, size);
+		super( drq, com.nrt.render.BufferType.Index, size);
 	}
 }
 

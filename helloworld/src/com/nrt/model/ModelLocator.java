@@ -1,7 +1,7 @@
-package nrt.model;
+package com.nrt.model;
 
-import nrt.math.Float3;
-import nrt.math.Float4x4;
+import com.nrt.math.Float3;
+import com.nrt.math.Float4x4;
 
 public class ModelLocator
 {

@@ -1,9 +1,9 @@
-package nrt.collision;
+package com.nrt.collision;
 
 import android.opengl.GLES20;
 
-import nrt.math.FMath;
-import nrt.render.BasicRender;
+import com.nrt.math.FMath;
+import com.nrt.render.BasicRender;
 
 
 public class CollisionElement

@@ -1,4 +1,4 @@
-package nrt.input;
+package com.nrt.input;
 
 import android.view.MotionEvent;
 

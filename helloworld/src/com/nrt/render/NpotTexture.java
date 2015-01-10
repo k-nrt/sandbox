@@ -1,4 +1,4 @@
-package nrt.render;
+package com.nrt.render;
 
 public interface NpotTexture
 {

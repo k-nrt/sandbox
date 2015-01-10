@@ -1,4 +1,4 @@
-package nrt.collision;
+package com.nrt.collision;
 
 public class CollisionMesh
 {

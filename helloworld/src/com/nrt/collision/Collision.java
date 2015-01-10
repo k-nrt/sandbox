@@ -1,8 +1,8 @@
-package nrt.collision;
+package com.nrt.collision;
 
-import nrt.basic.DebugLog;
-import nrt.math.FMath;
-import nrt.math.Float3;
+import com.nrt.basic.DebugLog;
+import com.nrt.math.FMath;
+import com.nrt.math.Float3;
 
 public class Collision extends FMath
 {

@@ -1,12 +1,12 @@
-package nrt.ui;
+package com.nrt.ui;
 
 import java.util.List;
 import java.util.ArrayList;
 
 import android.opengl.GLES20;
 
-import nrt.basic.Rect;
-import nrt.render.*;
+import com.nrt.basic.Rect;
+import com.nrt.render.*;
 
 public class UiLayout
 {

@@ -1,6 +1,6 @@
-package nrt.clipper;
+package com.nrt.clipper;
 
-import nrt.math.*;
+import com.nrt.math.*;
 
 public class Frustum
 {
@@ -80,7 +80,7 @@ public class Frustum
 		}
 	}
 	
-	public final void Draw( nrt.render.BasicRender br )
+	public final void Draw( com.nrt.render.BasicRender br )
 	{
 		for( int i = 0 ; i < Surfaces.length ; i++ )
 		{

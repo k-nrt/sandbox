@@ -1,9 +1,9 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.opengl.*;
-import nrt.basic.*;
-import nrt.math.*;
-import nrt.framework.*;
+import com.nrt.basic.*;
+import com.nrt.math.*;
+import com.nrt.framework.*;
 
 public class BasicRender
 {

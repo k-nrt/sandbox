@@ -1,7 +1,7 @@
-package nrt.model;
+package com.nrt.model;
 
-import nrt.basic.*;
-import nrt.render.*;
+import com.nrt.basic.*;
+import com.nrt.render.*;
 import java.util.*;
 
 public class ModelShaderSet

@@ -1,8 +1,8 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.opengl.*;
 
-import nrt.basic.DebugLog;
+import com.nrt.basic.DebugLog;
 import android.app.*;
 
 

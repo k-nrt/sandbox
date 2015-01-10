@@ -1,4 +1,4 @@
-package nrt.basic;
+package com.nrt.basic;
 
 
 import java.util.Random;

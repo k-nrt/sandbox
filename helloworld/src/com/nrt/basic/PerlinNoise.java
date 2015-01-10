@@ -1,8 +1,8 @@
-package nrt.basic;
+package com.nrt.basic;
 import java.util.*;
 import android.renderscript.*;
-import nrt.clipper.*;
-import nrt.math.*;
+import com.nrt.clipper.*;
+import com.nrt.math.*;
 import java.nio.*;
 
 public class PerlinNoise

@@ -1,4 +1,4 @@
-package nrt.basic;
+package com.nrt.basic;
 
 public class Rect
 {

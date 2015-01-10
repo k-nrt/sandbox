@@ -1,6 +1,6 @@
-package nrt.model;
-import nrt.render.*;
-import nrt.math.*;
+package com.nrt.model;
+import com.nrt.render.*;
+import com.nrt.math.*;
 import java.security.*;
 
 public class ModelShadow
@@ -13,7 +13,7 @@ public class ModelShadow
 	
 	private boolean m_isDirty = true;
 	
-	private final Float4x4 m_matrixWorldViewProjection = nrt.math.Float4x4.Identity();
+	private final Float4x4 m_matrixWorldViewProjection = com.nrt.math.Float4x4.Identity();
 	private final Float3 m_f3ShadowDirection = new Float3();
 	
 	public Float4x4 GetWorldViewProjection()

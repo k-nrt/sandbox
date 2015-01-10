@@ -1,9 +1,9 @@
-package nrt.math;
+package com.nrt.math;
 
 import java.util.List;
 import java.util.*;
 
-import nrt.basic.DebugLog;
+import com.nrt.basic.DebugLog;
 
 public class Local
 {

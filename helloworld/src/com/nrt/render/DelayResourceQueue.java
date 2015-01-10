@@ -1,4 +1,4 @@
-package nrt.render;
+package com.nrt.render;
 import java.util.concurrent.*;
 import android.content.res.*;
 import android.content.pm.*;
@@ -6,7 +6,7 @@ import android.app.*;
 
 import java.util.List;
 import java.util.ArrayList;
-import nrt.framework.*;
+import com.nrt.framework.*;
 
 public class DelayResourceQueue
 {
@@ -35,7 +35,7 @@ public class DelayResourceQueue
 		@Override
 		public void Apply()
 		{
-			nrt.basic.DebugLog.Error.WriteLine( Text );
+			com.nrt.basic.DebugLog.Error.WriteLine( Text );
 		}
 	}
 	/*

@@ -1,4 +1,4 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.opengl.GLES20;
 
@@ -37,11 +37,11 @@ public class Program extends RenderResource
 	{		
 		if (VertexShader.Name == 0 || FragmentShader.Name == 0)
 		{
-			nrt.basic.DebugLog.Error.WriteLine( "can not create program" );
+			com.nrt.basic.DebugLog.Error.WriteLine( "can not create program" );
 			return;
 		}
 		Name = GLES20.glCreateProgram();
-		nrt.basic.DebugLog.Error.WriteLine( String.format( "apply program %d vs=%d fs=%d", Name, VertexShader.Name, FragmentShader.Name) );
+		com.nrt.basic.DebugLog.Error.WriteLine( String.format( "apply program %d vs=%d fs=%d", Name, VertexShader.Name, FragmentShader.Name) );
 		
 		GLES20.glAttachShader(Name, VertexShader.Name); 
 		GLES20.glAttachShader(Name, FragmentShader.Name);

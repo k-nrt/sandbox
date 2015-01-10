@@ -1,4 +1,4 @@
-package nrt.render;
+package com.nrt.render;
 
 import java.nio.Buffer;
 import java.nio.ByteBuffer;

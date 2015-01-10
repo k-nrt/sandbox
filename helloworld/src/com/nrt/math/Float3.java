@@ -1,8 +1,8 @@
-package nrt.math;
+package com.nrt.math;
 
 import java.util.Random;
 
-import nrt.math.FMath;
+import com.nrt.math.FMath;
 
 public final class Float3
 {

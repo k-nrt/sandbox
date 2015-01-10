@@ -1,9 +1,9 @@
-package nrt.collision;
+package com.nrt.collision;
 
 import java.io.InputStream;
-import nrt.basic.LoaderBase;
-import nrt.basic.DebugLog;
-import nrt.math.Float3;
+import com.nrt.basic.LoaderBase;
+import com.nrt.basic.DebugLog;
+import com.nrt.math.Float3;
 
 public class CollisionLoader extends LoaderBase
 {

@@ -1,5 +1,6 @@
-package nrt.render;
+package com.nrt.render;
 import android.opengl.*;
+
 public enum BufferType
 {
 	Unknown(0),

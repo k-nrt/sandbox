@@ -1,11 +1,11 @@
-package nrt.render;
+package com.nrt.render;
 import java.util.*;
 
 import android.webkit.*;
 import java.util.concurrent.*;
 
 //import nrt.framework.SubSystem;
-import nrt.basic.*;
+import com.nrt.basic.*;
 
 public class DelayResourceLoaderThread extends Thread
 {

@@ -1,10 +1,10 @@
-package nrt.font;
+package com.nrt.font;
 
-import nrt.framework.SubSystem;
+import com.nrt.framework.SubSystem;
 import android.opengl.GLES20;
-import nrt.math.Float3;
-import nrt.render.*;
-import nrt.framework.*;
+import com.nrt.math.Float3;
+import com.nrt.render.*;
+import com.nrt.framework.*;
 
 public class FontRender
 {

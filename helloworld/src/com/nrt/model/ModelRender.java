@@ -1,12 +1,12 @@
-package nrt.model;
+package com.nrt.model;
 
 import android.opengl.GLES20;
 
-import nrt.render.*;
-import nrt.math.Float3;
-import nrt.math.Float4;
-import nrt.math.Float4x4;
-import nrt.basic.Loader;
+import com.nrt.render.*;
+import com.nrt.math.Float3;
+import com.nrt.math.Float4;
+import com.nrt.math.Float4x4;
+import com.nrt.basic.Loader;
 
 public class ModelRender
 {

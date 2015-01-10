@@ -5,7 +5,7 @@ import com.nrt.math.Float3;
 import com.nrt.framework.SubSystem;
 
 import java.io.InputStream;
-import nrt.model.*;
+import com.nrt.model.*;
 
 public class AnimPose
 {

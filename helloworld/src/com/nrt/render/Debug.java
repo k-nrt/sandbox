@@ -1,13 +1,13 @@
-package nrt.render;
+package com.nrt.render;
 
 import java.nio.ByteBuffer;
 import java.nio.*;
 import android.opengl.*;
 
-import nrt.render.*;
-import nrt.math.FMath;
-import nrt.math.Float4;
-import nrt.math.Float4x4;
+import com.nrt.render.*;
+import com.nrt.math.FMath;
+import com.nrt.math.Float4;
+import com.nrt.math.Float4x4;
 
 
 public class Debug

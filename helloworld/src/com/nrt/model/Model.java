@@ -1,9 +1,9 @@
-package nrt.model;
+package com.nrt.model;
 
 import java.io.InputStream;
-import nrt.math.Float3;
-import nrt.basic.LoaderBase;
-import nrt.render.*;
+import com.nrt.math.Float3;
+import com.nrt.basic.LoaderBase;
+import com.nrt.render.*;
 
 
 public class Model

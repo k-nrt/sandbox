@@ -1,8 +1,8 @@
-package nrt.ui;
+package com.nrt.ui;
 
-import nrt.input.FramePointer;
-import nrt.render.BasicRender;
-import nrt.basic.Rect;
+import com.nrt.input.FramePointer;
+import com.nrt.render.BasicRender;
+import com.nrt.basic.Rect;
 
 public interface UiItem
 {

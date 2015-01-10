@@ -1,9 +1,9 @@
-package nrt.render;
+package com.nrt.render;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import android.opengl.*;
-import nrt.math.*;
+import com.nrt.math.*;
 
 public class RingBuffer extends RenderResource
 {

@@ -1,8 +1,8 @@
-package nrt.render;
+package com.nrt.render;
 import android.widget.*;
 import android.opengl.*;
 
-import nrt.math.*;
+import com.nrt.math.*;
 
 public class PostEffectBloom
 {

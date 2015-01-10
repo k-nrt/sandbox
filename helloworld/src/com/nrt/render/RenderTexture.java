@@ -1,6 +1,6 @@
-package nrt.render;
+package com.nrt.render;
 import android.opengl.GLES20;
-import nrt.framework.SubSystem;
+import com.nrt.framework.SubSystem;
 
 public class RenderTexture extends RenderResource implements Texture
 {

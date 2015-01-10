@@ -1,7 +1,7 @@
-package nrt.clipper;
+package com.nrt.clipper;
 
-import nrt.math.Float3;
-import nrt.render.*;
+import com.nrt.math.Float3;
+import com.nrt.render.*;
 import android.opengl.*;
 
 public class Surface

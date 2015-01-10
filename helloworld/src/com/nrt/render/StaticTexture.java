@@ -1,12 +1,12 @@
-package nrt.render;
+package com.nrt.render;
 
 import java.nio.Buffer;
 import android.opengl.*;
 import android.graphics.Bitmap;
 
-import nrt.basic.RawImage;
+import com.nrt.basic.RawImage;
 import android.media.effect.*;
-import nrt.framework.*;
+import com.nrt.framework.*;
 import java.nio.*;
 
 public class StaticTexture extends RenderResource implements Texture

@@ -1,6 +1,6 @@
-package nrt.input;
+package com.nrt.input;
 
-import nrt.math.Float3;
+import com.nrt.math.Float3;
 
 public class FramePointer
 {

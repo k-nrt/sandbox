@@ -1,11 +1,13 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.opengl.*;
 
+//import com.nrt.r
+
 public class SamplerState
 {
-	public MagFilter MagFilter = nrt.render.MagFilter.Nearest;
-	public MinFilter MinFilter = nrt.render.MinFilter.Nearest;
+	public MagFilter MagFilter = MagFilter.Nearest;
+	public MinFilter MinFilter = MinFilter.Nearest;
 
 	public Wrap WrapS = Wrap.Repeat;
 	public Wrap WrapT = Wrap.Repeat;

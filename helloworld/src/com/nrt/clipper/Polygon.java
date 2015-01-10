@@ -1,8 +1,8 @@
-package nrt.clipper;
+package com.nrt.clipper;
 
-import nrt.math.Float3;
-import nrt.math.*;
-import nrt.render.*;
+import com.nrt.math.Float3;
+import com.nrt.math.*;
+import com.nrt.render.*;
 import android.opengl.*;
 
 public class Polygon

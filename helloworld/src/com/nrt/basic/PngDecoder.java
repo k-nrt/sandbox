@@ -1,4 +1,4 @@
-package nrt.basic;
+package com.nrt.basic;
 
 import java.io.*;
 import android.widget.TextView;

@@ -1,9 +1,9 @@
-package nrt.math;
+package com.nrt.math;
 import android.graphics.*;
 import android.opengl.Matrix;
 import android.animation.*;
 
-import nrt.basic.*;
+import com.nrt.basic.*;
 
 
 public final class Float4x4

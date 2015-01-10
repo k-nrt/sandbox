@@ -1,10 +1,10 @@
-package nrt.ui;
+package com.nrt.ui;
 
-import nrt.basic.Rect;
-import nrt.input.FramePointer;
-import nrt.input.DevicePointer;
+import com.nrt.basic.Rect;
+import com.nrt.input.FramePointer;
+import com.nrt.input.DevicePointer;
 
-import nrt.render.BasicRender;
+import com.nrt.render.BasicRender;
 
 public class UiRectButton implements UiItem
 {

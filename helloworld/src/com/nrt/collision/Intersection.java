@@ -1,7 +1,7 @@
-package nrt.collision;
+package com.nrt.collision;
 
-import nrt.math.Float3;
-import nrt.math.LocalList;
+import com.nrt.math.Float3;
+import com.nrt.math.LocalList;
 
 public final class Intersection
 {

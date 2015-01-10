@@ -1,4 +1,4 @@
-package nrt.render;
+package com.nrt.render;
 import android.opengl.GLES20;
 
 public enum TextureInternalFormat

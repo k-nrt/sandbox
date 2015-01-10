@@ -1,6 +1,6 @@
-package nrt.clipper;
-import nrt.math.*;
-import nrt.render.*;
+package com.nrt.clipper;
+import com.nrt.math.*;
+import com.nrt.render.*;
 
 public class Box
 {

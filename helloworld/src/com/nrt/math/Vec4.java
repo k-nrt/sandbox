@@ -1,4 +1,4 @@
-package nrt.math;
+package com.nrt.math;
 
 public class Vec4 extends Vec3
 {

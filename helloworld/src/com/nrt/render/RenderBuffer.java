@@ -1,7 +1,7 @@
-package nrt.render;
+package com.nrt.render;
 import android.opengl.GLES20;
 import java.text.*;
-import nrt.framework.SubSystem;
+import com.nrt.framework.SubSystem;
 
 public class RenderBuffer extends RenderResource
 {

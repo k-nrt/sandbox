@@ -1,4 +1,4 @@
-package nrt.font;
+package com.nrt.font;
 
 import java.nio.Buffer; 
 import java.nio.ByteBuffer; 
@@ -14,9 +14,9 @@ import android.graphics.*;
 import java.nio.charset.*;
 import android.util.*;
 
-import nrt.basic.DebugLog;
-import nrt.render.*;
-import nrt.framework.*;
+import com.nrt.basic.DebugLog;
+import com.nrt.render.*;
+import com.nrt.framework.*;
 
 
 

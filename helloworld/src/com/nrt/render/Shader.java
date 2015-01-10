@@ -1,9 +1,9 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.util.Log;
 import android.opengl.*;
 import java.util.*;
-import nrt.framework.*;
+import com.nrt.framework.*;
 
 public class Shader extends RenderResource
 {

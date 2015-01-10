@@ -1,9 +1,9 @@
-package nrt.render;
+package com.nrt.render;
 
-import nrt.math.*;
+import com.nrt.math.*;
 import android.opengl.*;
 import java.nio.*;
-import nrt.framework.*;
+import com.nrt.framework.*;
 import org.apache.http.*;
 
 public class OcclusionQuery

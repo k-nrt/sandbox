@@ -1,6 +1,6 @@
-package nrt.math;
+package com.nrt.math;
 
-import nrt.math.Float3;
+import com.nrt.math.Float3;
 import java.nio.*;
 
 public class Vec3

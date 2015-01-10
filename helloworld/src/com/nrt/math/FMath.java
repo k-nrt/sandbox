@@ -1,13 +1,13 @@
-package nrt.math;
+package com.nrt.math;
 
 import java.lang.Math;
-import nrt.basic.DebugLog;
-import nrt.collision.Intersection;
-import nrt.collision.Sphere;
-import nrt.collision.Edge;
-import nrt.collision.Triangle;
-import nrt.collision.Polygon;
-import nrt.collision.BoundingBox;
+import com.nrt.basic.DebugLog;
+import com.nrt.collision.Intersection;
+import com.nrt.collision.Sphere;
+import com.nrt.collision.Edge;
+import com.nrt.collision.Triangle;
+import com.nrt.collision.Polygon;
+import com.nrt.collision.BoundingBox;
 
 public class FMath
 {

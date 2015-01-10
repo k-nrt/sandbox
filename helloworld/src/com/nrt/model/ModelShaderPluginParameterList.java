@@ -1,6 +1,6 @@
-package nrt.model;
+package com.nrt.model;
 
-import nrt.render.*;
+import com.nrt.render.*;
 
 public interface ModelShaderPluginParameterList
 {

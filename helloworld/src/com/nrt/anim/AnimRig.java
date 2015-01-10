@@ -1,10 +1,10 @@
-package nrt.anim;
+package com.nrt.anim;
 
 import java.io.InputStream;
-import nrt.model.*;
-import nrt.framework.SubSystem;
-import nrt.framework.*;
-import nrt.render.*;
+import com.nrt.model.*;
+import com.nrt.framework.SubSystem;
+import com.nrt.framework.*;
+import com.nrt.render.*;
 
 public class AnimRig
 {

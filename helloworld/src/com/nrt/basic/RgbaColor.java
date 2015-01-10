@@ -1,7 +1,7 @@
-package nrt.basic;
+package com.nrt.basic;
 
 import java.nio.ByteOrder;
-import nrt.math.Float4;
+import com.nrt.math.Float4;
 
 public class RgbaColor
 {

@@ -1,5 +1,5 @@
-package nrt.render;
-import nrt.framework.*;
+package com.nrt.render;
+import com.nrt.framework.*;
 
 public class DelayResourceQueueMarker extends RenderResource
 {

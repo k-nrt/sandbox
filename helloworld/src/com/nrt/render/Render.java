@@ -1,11 +1,11 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.opengl.*;
-import nrt.math.Float3;
-import nrt.math.Float4;
-import nrt.math.Vec3;
-import nrt.math.Vec4;
-import nrt.math.Float4x4;
+import com.nrt.math.Float3;
+import com.nrt.math.Float4;
+import com.nrt.math.Vec3;
+import com.nrt.math.Vec4;
+import com.nrt.math.Float4x4;
 
 public class Render
 {

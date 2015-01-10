@@ -1,6 +1,6 @@
-package nrt.model;
+package com.nrt.model;
 
-import nrt.math.Float4x4;
+import com.nrt.math.Float4x4;
 
 public class ModelJoint
 {

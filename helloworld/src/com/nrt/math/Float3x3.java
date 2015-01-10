@@ -1,6 +1,6 @@
-package nrt.math;
+package com.nrt.math;
 
-import nrt.basic.DebugLog;
+import com.nrt.basic.DebugLog;
 
 public final class Float3x3
 {

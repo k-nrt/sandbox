@@ -1,4 +1,4 @@
-package nrt.vmath;
+package com.nrt.vmath;
 import java.nio.*;
 
 public class Local

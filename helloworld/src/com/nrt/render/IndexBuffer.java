@@ -1,4 +1,4 @@
-package nrt.render;
+package com.nrt.render;
 
 import android.opengl.*;
 import java.nio.ByteBuffer;
