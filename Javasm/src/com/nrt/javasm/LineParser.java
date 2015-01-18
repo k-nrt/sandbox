@@ -42,7 +42,7 @@ public class LineParser
 	{
 		for( Line line : Lines )
 		{
-			strBase += String.format( "%06d %08x ", line.LineNumber, line.Address );
+			strBase += String.format( "LN[%06d] AD[%04x] ", line.LineNumber, line.Address );
 			if( line.AddressLabel != null )
 			{
 				strBase += String.format( "L[%s] ", line.AddressLabel.Name );
@@ -55,18 +55,18 @@ public class LineParser
 			
 			if( line.Opcode != null )
 			{
-				strBase += String.format( "I[%s] ", line.Opcode.Name );
+				strBase += String.format( "OP[%s] ", line.Opcode.Name );
 			}
 			
 			for( Expression exp : line.Expressions )
 			{
 				if( exp.Addressing == true )
 				{
-					strBase += "A";	
+					strBase += "AD";	
 				}
 				else
 				{
-					strBase += "I";
+					strBase += "IM";
 				}
 				
 				strBase += "{";

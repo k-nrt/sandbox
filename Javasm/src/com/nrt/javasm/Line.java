@@ -55,8 +55,7 @@ public final class Line
 
 		Token token = Tokens.get(i);
 
-		Opcode = token;	
-
+		Opcode = token;
 		i++;
 		for( ; i < Tokens.size() ; i++ )
 		{
@@ -65,6 +64,7 @@ public final class Line
 
 			Expressions.add( exp );
 		}
+		
 		return true;
 	}
 }

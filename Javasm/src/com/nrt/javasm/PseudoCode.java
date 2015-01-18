@@ -238,7 +238,7 @@ public class PseudoCode
 				return false;
 			}
 			
-			return DataType.DataParser.IsMatch( line.Expressions );			 
+			return true;//DataType.DataParser.IsMatch( line.Expressions );			 
 		}
 	}
 	
