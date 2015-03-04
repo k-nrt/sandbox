@@ -115,8 +115,8 @@ public final class GamePlayer
 	public float ShieldMax = 100.0f; 
 	public float Shield = ShieldMax;
 
-	public final Float3 m_f3ShieldCenter = new Float3(0.0f, 0.0f, 200.0f);
-	public final float m_fShieldRadius = 120.0f;
+	public final Float3 m_f3ShieldCenter = new Float3(0.0f, 0.0f, 50.0f);
+	public final float m_fShieldRadius = 30.0f;
 	public final Float3 m_f3Intersection = new Float3(0.0f);
 	public final Float3 m_f3IntersectionLocal = new Float3(0.0f);
 
@@ -128,8 +128,8 @@ public final class GamePlayer
 		
 		public float Time = 0.0f;
 		
-		public final float kRadiusStart = 30.0f;
-		public final float kRadiusEnd = 60.0f;
+		public final float kRadiusStart = 10.0f;
+		public final float kRadiusEnd = 20.0f;
 		
 		public float Radius = 0.0f;
 		public float Alpha = 0.0f;
@@ -616,13 +616,13 @@ public final class GamePlayer
 
 				Float4x4 matrixWorld = Float4x4.Mul( Float4x4.Local(), Float4x4.Local( f3X, f3Y, f3Z, dp.Position ), Transform );
 				br.GetMatrixCache().SetWorld( matrixWorld );
-				float fRadius = 30.0f;
-				br.Arc(0.0f, 0.0f, fRadius, 0xffff00ff, fRadius-20.0f, 0xff000000, 6); 
+				float fRadius = 10.0f;
+				br.Arc(0.0f, 0.0f, fRadius, 0xffff00ff, fRadius-5.0f, 0xff000000, 6); 
 				
 				if( 0 < dp.Alpha )
 				{
 					int alpha = (int)(dp.Alpha*255.0f);
-					br.Arc(0.0f, 0.0f, dp.Radius, 0xffffff00 | alpha, dp.Radius - 30.0f, 0xff000000, 6 );
+					br.Arc(0.0f, 0.0f, dp.Radius, 0xffffff00 | alpha, dp.Radius - 5.0f, 0xff000000, 6 );
 				}
 				
 				/*
@@ -724,7 +724,9 @@ public final class GamePlayer
 		bf.SetColor( RgbaColor.FromRgba( 0x00ff00ff ));
 		bf.SetSize( 8.0f * viewPoint.HudHeight/frameBuffer.Height);
 		
-
+		GLES20.glEnable(GLES20.GL_BLEND);
+		GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE);
+		
 		for (GameStarShip ship : starShips)
 		{
 			if (ship.IsBusy())
@@ -734,7 +736,8 @@ public final class GamePlayer
 
 				if (-1.0f < f3Center.Z && f3Center.Z < 1.0f)
 				{
-					br.Arc(f3Center.X, f3Center.Y, 32.0f, 6);
+					//br.Arc(f3Center.X, f3Center.Y, 32.0f, 6);
+					br.Arc(f3Center.X, f3Center.Y, 16.0f, 0x00000000, 32.0f, 0x00ff0080, 6);
 
 					bf.Begin();
 					bf.Draw((int) (f3Center.X - 32.0f), (int)(f3Center.Y + 32.0f), 0.0f, "FLEET");
@@ -752,7 +755,8 @@ public final class GamePlayer
 
 				if (-1.0f < f3Center.Z && f3Center.Z < 1.0f)
 				{
-					br.Arc(f3Center.X, f3Center.Y, 32.0f, 4); 
+					//br.Arc(f3Center.X, f3Center.Y, 32.0f, 4); 
+					br.Arc(f3Center.X, f3Center.Y, 16.0f, 0x00000000, 32.0f, 0x00ff0080, 4 );
 
 					bf.Begin();
 					bf.Draw((int)(f3Center.X - 32.0f), (int)(f3Center.Y + 32.0f), 0.0f, enemy.HudName);
@@ -762,7 +766,7 @@ public final class GamePlayer
 			}
 		}
 
-		
+		GLES20.glDisable(GLES20.GL_BLEND);
 		
 		
 
@@ -1007,7 +1011,7 @@ public final class GamePlayer
 		//float fDotStart = Float3.Dot(f3Normal, f3ToStart);
 		//float fDotEnd   = Float3.Dot(f3Normal, f3ToEnd);
 
-		float r = 200.0f;//m_f3ShieldCenter.Z;
+		float r = 100.0f;//m_f3ShieldCenter.Z;
 		//r = FMath.Sqrt((m_fShieldRadius*m_fShieldRadius)+r*r);
 		
 		//m_edge.Set( f3PrevPosition, f3Position );
