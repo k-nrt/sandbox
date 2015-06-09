@@ -76,19 +76,20 @@ public class RenderTexture extends RenderResource implements Texture
 	protected static int CreateTexture( RenderTextureFormat eFormat, int width, int height )
 	{
 		int[] names={0};
+		java.nio.Buffer buffer = java.nio.ByteBuffer.allocateDirect( width*height*4 );
+	
 		GLES20.glGenTextures( 1, names, 0 );
 		
 		GLES20.glBindTexture( GLES20.GL_TEXTURE_2D, names[0] );
 		GLES20.glTexImage2D( GLES20.GL_TEXTURE_2D, 0, eFormat.Value,
 							width, height, 0, 
-							GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, null );
+							GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, buffer );
 							
 		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
 		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
 		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
 		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
 		
-							
 		GLES20.glBindTexture( GLES20.GL_TEXTURE_2D, 0 );	
 		
 		return names[0];

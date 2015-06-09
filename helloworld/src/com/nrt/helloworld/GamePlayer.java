@@ -624,22 +624,6 @@ public final class GamePlayer
 					int alpha = (int)(dp.Alpha*255.0f);
 					br.Arc(0.0f, 0.0f, dp.Radius, 0xffffff00 | alpha, dp.Radius - 5.0f, 0xff000000, 6 );
 				}
-				
-				/*
-				 Float3 f3 = Float4x4.Mul(Float3.Local(), Float4.Local(dp.Position, 1.0f), Transform);
-				 viewPoint.ProjectHudScreen(f3, f3);
-
-				 float fMin = 10.0f;
-				 float fMax = 50.0f;
-				 float fRadius = FMath.Lerp(32.0f, 64.0f, FMath.Clamp((dp.Damage - fMin) / (fMax + fMin), 0.0f, 1.0f));
-
-				 br.Arc(f3.X, f3.Y, fRadius, 8); 
-
-				 bf.Begin();
-				 bf.Draw((int)(f3.X - viewPoint.PixelWidth * 6.0f * 3.0f), (int)(f3.Y + fRadius * 0.5f), 0.0f, "REPAIR");
-				 bf.End();
-				 */
-
 			}
 		}
 		/*
@@ -1003,22 +987,15 @@ public final class GamePlayer
 	public boolean AddDamage(Float3 f3Start, Float3 f3End, float fPower)
 	{
 		Float3 f3Normal = Transform.GetAxisZ( Float3.Local() );
-		Float3 f3Center = Transform.GetAxisW( Float3.Local() );//Float4x4.Mul(Float3.Local(), Float4.Local(m_f3ShieldCenter, 1.0f), Transform);
+		Float3 f3Center = Transform.GetAxisW( Float3.Local() );
 
-		//Float3 f3ToStart = Float3.Sub(Float3.Local(), f3PrevPosition, f3Center); 
-		//Float3 f3ToEnd   = Float3.Sub(Float3.Local(), f3Position, f3Center);
+		final float fShieldRadius = 100.0f;//m_f3Shiel
+		final float fShieldAngle = FMath.ToRad(30.0f);
 
-		//float fDotStart = Float3.Dot(f3Normal, f3ToStart);
-		//float fDotEnd   = Float3.Dot(f3Normal, f3ToEnd);
-
-		float r = 100.0f;//m_f3ShieldCenter.Z;
-		//r = FMath.Sqrt((m_fShieldRadius*m_fShieldRadius)+r*r);
-		
-		//m_edge.Set( f3PrevPosition, f3Position );
 		Float3 f3Intersection = Float3.Local();
-		if( Intersect( f3Start, f3End, f3Center, r, f3Intersection) )
+		if( Intersect( f3Start, f3End, f3Center, fShieldRadius, f3Intersection) )
 		{
-			float c = FMath.Cos( FMath.ToRad( 30.0f ) );
+			float c = FMath.Cos( fShieldAngle );
 			if( c < Float3.Dot( f3Normal, Float3.SubNormalize( Float3.Local(), f3Intersection, f3Center ) )  )
 			{
 				Float4x4 matrixInverse = Float4x4.Invert(Float4x4.Local(), Transform);
@@ -1045,56 +1022,9 @@ public final class GamePlayer
 		}
 		
 		return false;
-		
-		/*
-		 Float3 f3Normal = Transform.GetAxisZ( Float3.Local() );
-		 Float3 f3Center = Float4x4.MulXYZ1(Float3.Local(), m_f3ShieldCenter, Transform);
-
-		 Float3 f3ToStart = Float3.Sub(Float3.Local(), f3PrevPosition, f3Center); 
-		 Float3 f3ToEnd   = Float3.Sub(Float3.Local(), f3Position, f3Center);
-
-		 float fDotStart = Float3.Dot(f3Normal, f3ToStart);
-		 float fDotEnd   = Float3.Dot(f3Normal, f3ToEnd);
-		 
-		if (fDotStart < 0.0f && fDotEnd >= 0.0f)
-		{
-			fDotStart = -fDotStart;
-			Float3 f3Intersection = Float3.Lerp(Float3.Local(),
-												fDotStart / (fDotStart + fDotEnd),
-												f3PrevPosition, 
-												f3Position);
-
-			float fDistance = Float3.Distance(f3Center, f3Intersection);
-			//	 System.Error.WriteLine( String.format( "hit %f %f %f", f3Intersection.X, f3Intersection.Y, f3Intersection.Z ) );
-
-			if (fDistance < m_fShieldRadius)
-			{
-				//m_f3Intersection.Set(f3Intersection);
-				Float4x4 matrixInverse = Float4x4.Invert(Float4x4.Local(), Transform);
-
-				Float3 f3IntersectionLocal = Float4x4.MulXYZ1( Float3.Local(), f3Intersection, matrixInverse);
-
-				//Shield -= 50.0f;
-
-				
-				
-				AddDamagePosition(f3IntersectionLocal, fPower);
-				//System.Error.WriteLine( String.format( "hit %f %f %f", f3Intersection.X, f3Intersection.Y, f3Intersection.Z ) );
-				return true;
-			}
-			else
-			{
-				return false; 
-			}
-		}
-		else
-
-		{
-			return false;
-		}
-		*/
 	}
 
+	//. intersection to sphere.
 	private boolean Intersect
 	(
 		Float3 f3Start, Float3 f3End,

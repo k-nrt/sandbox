@@ -70,7 +70,6 @@ public class StaticTexture extends RenderResource implements Texture
 		java.nio.Buffer buffer,
 		boolean isGenarateMipmap 
 	)
-		//throws ThreadForceDestroyException
 	{
 		m_internalFormat = internalFormat;
 		PotWidth = nPotWidth;
@@ -96,7 +95,6 @@ public class StaticTexture extends RenderResource implements Texture
 		Bitmap bitmap,
 		boolean isGenarateMipmap
 	)
-		//throws ThreadForceDestroyException
 	{
 		PotWidth = bitmap.getWidth();
 		PotHeight = bitmap.getHeight();
@@ -117,8 +115,12 @@ public class StaticTexture extends RenderResource implements Texture
 	public StaticTexture()
 	{}
 
-	public StaticTexture( DelayResourceQueue queue, RawImage image, boolean isGenerateMipmap )
-		//throws ThreadForceDestroyException
+	public StaticTexture
+	(
+		DelayResourceQueue queue,
+		RawImage image,
+		boolean isGenerateMipmap
+	)
 	{
 		Initialize
 		( 
@@ -131,62 +133,21 @@ public class StaticTexture extends RenderResource implements Texture
 			image.Pixels,
 			isGenerateMipmap
 		);
-		/*
-		int[] names = { 0 };
-		GLES20.glGenTextures(1, names, 0);
-		Name = names[0];
-
-		NpotWidth = image.Width;
-		NpotHeight = image.Height;
-		PotWidth = GetPowerOfTwo(image.Width);
-		PotHeight = GetPowerOfTwo(image.Height);
-
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, Name);
-
-		image.Pixels.position(0);
-		GLES20.glTexImage2D( GLES20.GL_TEXTURE_2D,
-							0, image.Format, PotWidth, PotHeight, 0,
-							image.Format, image.Type, image.Pixels );
-								
-		GLES20.glGenerateMipmap( GLES20.GL_TEXTURE_2D );
-	
-	
-		//GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
-		//GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
-		//GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_REPEAT);
-		//GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_REPEAT);
-
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, 0);
-		*/
 	}
 
-	public StaticTexture( DelayResourceQueue queue,  Bitmap bitmap, boolean isGenerateMipmap )
-	//throws ThreadForceDestroyException
+	public StaticTexture
+	(
+		DelayResourceQueue queue,
+		Bitmap bitmap,
+		boolean isGenerateMipmap 
+	)
 	{
-		Initialize( 
+		Initialize
+		( 
 			queue,
 			bitmap,
-			isGenerateMipmap );
-		
-		/*
-		int[] names = { 0 };
-		GLES20.glGenTextures(1, names, 0);
-		Name = names[0];
-
-		PotWidth = bitmap.getWidth();
-		PotHeight = bitmap.getHeight();
-		
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, Name);
-
-		GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
-		
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_REPEAT);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_REPEAT);
-
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, 0);
-		*/
+			isGenerateMipmap 
+		);
 	}
 
 	public StaticTexture
@@ -195,35 +156,10 @@ public class StaticTexture extends RenderResource implements Texture
 		int eFormat, int nWidth, int nHeight, 
 		int eSrcFormat, int eSrcType, Buffer buffer, boolean isGenerateMipmap
 	)
-		//throws ThreadForceDestroyException
 	{
 		Initialize( queue,
 			eFormat, nWidth, nHeight,
 			eSrcFormat, eSrcType, buffer, isGenerateMipmap );
-		/*
-		int[] names = { 0 };
-		GLES20.glGenTextures(1, names, 0);
-		Name = names[0];
-
-		PotWidth = nWidth;
-		PotHeight = nHeight;
-		
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, Name);
-
-		//GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
-
-		GLES20.glTexImage2D( GLES20.GL_TEXTURE_2D,
-							0, eFormat, PotWidth, PotHeight, 0,
-							eSrcFormat, eSrcType, buffer );
-
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_REPEAT);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_REPEAT);
-
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, 0);
-		*/
-
 	}
 	
 	public static int GetPowerOfTwo( int a )
@@ -258,20 +194,6 @@ public class StaticTexture extends RenderResource implements Texture
 							m_sourceFormat, m_sourceType, m_buffer );
 							
 			SubSystem.Log.WriteLine( String.format( "Texture source is buffer %d", m_buffer.capacity() ) );
-			/*
-			for( int y = 0 ; y < 64 ; y++ )
-			{
-				
-				for( int x = 0 ; x < 64 ; x++ )
-				{
-					m_buffer.position( x + y*128*4 );
-					ByteBuffer b = (ByteBuffer) m_buffer;
-					SubSystem.Log.Write( " " + b.get() );
-				}
-				
-				SubSystem.Log.WriteLine(" ");
-			}
-			*/
 		}
 
 		if( m_isGenerateMipmap )
@@ -286,51 +208,4 @@ public class StaticTexture extends RenderResource implements Texture
 
 		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, 0);
 	}
-	
-	/*
-	
-	public static void Create( StaticTexture texture, RawImage image )
-	{
-		Create( texture, image.Format, image.Width, image.Height, image.Format, image.Type, image.Pixels, true );
-	}
-	
-	public static void Create( StaticTexture texture, TextureInternalFormat internalFormat, int nWidth, int nHeight, TextureSourceFormat sourceFormat, TextureSourceType sourceType, java.nio.Buffer buffer, boolean isGenerateMipMap )
-	{
-		Create( texture, internalFormat.Value, nWidth, nHeight, sourceFormat.Value, sourceType.Value, buffer, isGenerateMipMap );
-	}
-	*/
-	
-	/*
-	public static void Create( StaticTexture texture, int eFormat, int nWidth, int nHeight, int eSrcFormat, int eSrcType, java.nio.Buffer buffer, boolean isGenerateMipMap )
-	{
-		int[] names = { 0 };
-		GLES20.glGenTextures(1, names, 0);
-		texture.Name = names[0];
-
-		texture.PotWidth = nWidth;
-		texture.PotHeight = nHeight;
-		
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texture.Name);
-
-		//GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
-
-		GLES20.glTexImage2D( GLES20.GL_TEXTURE_2D,
-							0, eFormat, texture.PotWidth, texture.PotHeight, 0,
-							eSrcFormat, eSrcType, buffer );
-
-		if( isGenerateMipMap )
-		{
-			GLES20.glGenerateMipmap( GLES20.GL_TEXTURE_2D );
-		}
-		
-							
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_REPEAT);
-		GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_REPEAT);
-
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, 0);
-
-	}
-	*/
 }
