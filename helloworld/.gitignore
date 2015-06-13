@@ -1,3 +1,5 @@
-*.dex
-*.class
-bin/
+/bin
+/gen
+/obj
+/libs/*/*.so
+
