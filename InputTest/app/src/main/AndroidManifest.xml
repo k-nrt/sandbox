@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nrt.inputtest" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+		
+		<!-- インプットメソッドの宣言（必須） -->
+		<service
+			android:name="InputIME"
+			android:label="@string/fast_input_label"
+			android:permission="android.permission.BIND_INPUT_METHOD" >
+			<intent-filter>
+				<action android:name="android.view.InputMethod" />
+			</intent-filter>
+
+			<meta-data
+				android:name="android.view.im"
+				android:resource="@xml/inputmethod" />
+		</service>
+		
+		<!--
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		-->
+    </application>
+
+</manifest>

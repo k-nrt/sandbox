@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+	android:keyWidth="10%p"
+	android:horizontalGap="0px"
+	android:verticalGap="0px"
+	android:keyHeight="40px">
+
+	<Row>
+		<Key android:codes="97" android:keyLabel="a" android:keyEdgeFlags="left"/>
+		<Key android:codes="10000" android:keyLabel="まぐろ" android:keyWidth="15%p"/>
+		<Key android:codes="10001" android:keyLabel="漬けまぐろ" android:keyWidth="22%p"/>
+		<Key android:codes="10002" android:keyLabel="ビントロ" android:keyWidth="20%p"/>
+		<Key android:codes="10003" android:keyLabel="真だい" android:keyWidth="15%p"/>
+		<Key android:codes="-5" android:keyIcon="@*android:drawable/sym_keyboard_delete" 
+			android:keyWidth="15%p" android:keyEdgeFlags="right"
+			android:isRepeatable="true"/>
+	</Row>
+
+	<Row>
+		<Key android:codes="10004" android:keyLabel="はまち" android:keyWidth="15%p" android:keyEdgeFlags="left" android:horizontalGap="5%p" />
+		<Key android:codes="10005" android:keyLabel="真いわし" android:keyWidth="20%p"/>
+		<Key android:codes="10006" android:keyLabel="サーモン" android:keyWidth="20%p"/>
+		<Key android:codes="10007" android:keyLabel="そでいか" android:keyWidth="20%p" android:keyEdgeFlags="right"/>
+	</Row>
+
+</Keyboard>
+
