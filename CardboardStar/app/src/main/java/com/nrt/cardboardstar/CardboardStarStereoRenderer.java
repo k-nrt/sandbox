@@ -55,8 +55,6 @@ implements CardboardView.StereoRenderer
 	public void onNewFrame(HeadTransform headTransform)
 	{
 
-
-
 		SubSystem.AppFrame.OnNewFrame();
 		if (SubSystem.AppFrame.AppCreated.get())
 		{
@@ -270,7 +268,16 @@ implements CardboardView.StereoRenderer
 
 		BitmapFont bf = SubSystem.BitmapFont;
 
-		bf.SetSize(16.0f);
+		if(1280 < viewPort.width )
+		
+{
+			bf.SetSize(16.0f);		
+		}
+		else
+		{
+			bf.SetSize(8.0f);
+		}
+
 		bf.SetColor(0x00ff00ff);
 		float size = bf.m_fSize;
 
