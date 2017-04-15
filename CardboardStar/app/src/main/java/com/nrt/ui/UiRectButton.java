@@ -6,15 +6,16 @@ import com.nrt.input.DevicePointer;
 
 import com.nrt.render.BasicRender;
 
-public class UiRectButton implements UiItem
+public class UiRectButton extends UiButton //implements UiItem
 {
 	public final Rect Enter = new Rect();
 	public final Rect Leave = new Rect();
 
+	/*
 	public final FramePointer.Pointer[] Pointers = new FramePointer.Pointer[DevicePointer.Pointers.length];
 	public int m_nbPointers = 0;
 	public int m_nbPrevPointers = 0;
-
+	*/
 	@Override
 	public void Resize(Rect rectEnter, Rect rectLeave)
 	{
@@ -78,6 +79,11 @@ public class UiRectButton implements UiItem
 		SetGeometry(ex,ey,ew,eh,lx,ly,lw,lh );
 	}
 	
+	public UiRectButton(float x, float y, float w, float h)
+	{
+		SetGeometry(x,y,w,h,x,y,w,h );
+	}
+	
 	public void SetGeometry(Rect rectEnter, Rect rectLeave)
 	{
 		Enter.Set( rectEnter );
@@ -108,6 +114,8 @@ public class UiRectButton implements UiItem
 	{
 		return Leave.IsIntersect(x, y);
 	}
+	
+	/*
 
 	public boolean OnDown(int id, FramePointer.Pointer pointer)
 	{
@@ -146,7 +154,7 @@ public class UiRectButton implements UiItem
 			}
 		}			
 	}
-
+	*/
 	public void OnRender(BasicRender br)
 	{
 		if (m_nbPrevPointers < m_nbPointers)
@@ -164,6 +172,7 @@ public class UiRectButton implements UiItem
 		br.Rectangle(Enter);
 	}
 
+	/*
 	public boolean IsPush()
 	{
 		if (m_nbPrevPointers <= 0 && m_nbPointers > 0)
@@ -180,4 +189,5 @@ public class UiRectButton implements UiItem
 	{
 		return (m_nbPointers > 0 ? true : false);
 	}
+	*/
 }

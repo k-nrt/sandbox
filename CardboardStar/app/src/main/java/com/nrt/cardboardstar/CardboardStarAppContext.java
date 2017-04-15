@@ -63,11 +63,14 @@ implements AppContext, CardboardAppContext
 	
 	public CardboardStarTargetList m_targetList = null;
 	
+	public VirtualPad m_virtualPad = new VirtualPad();
 	
 	public CardboardStarAppContext()
 	{
 		m_form.Add(m_buttonLeft);
 		m_form.Add(m_buttonRight);
+		
+		m_virtualPad.RegisterItems( m_form );
 	}
 
 
@@ -148,6 +151,7 @@ implements AppContext, CardboardAppContext
 	public void OnSurfaceChanged(int width, int height)
 	{
 		// TODO: Implement this method
+		//m_virtualPad.OnScreenSize( width, height, SubSystem.DisplayDPI );
 	}
 
 	public int m_windowWidth = 0;
@@ -160,6 +164,8 @@ implements AppContext, CardboardAppContext
 
 		m_buttonRight.Resize(width / 2.0f, 0, width / 2, height - 1);
 		m_buttonLeft.Resize(0, 0, width / 2, height - 1);
+		
+		m_virtualPad.OnScreenSize( width, height, SubSystem.DisplayDPI );
 	}
 
 
@@ -200,6 +206,7 @@ implements AppContext, CardboardAppContext
 		m_cardboardTrigger = false;
 		// TODO: Implement this method
 		m_form.Update(SubSystem.FramePointer, SubSystem.Timer.FrameElapsedTime);
+		//m_virtualPad.Update(SubSystem.FramePointer, SubSystem.Timer.FrameElapsedTime);
 
 		m_player.Update
 		(

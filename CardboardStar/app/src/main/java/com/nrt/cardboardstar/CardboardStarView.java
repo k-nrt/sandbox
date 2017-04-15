@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 
 import com.nrt.framework.SubSystem;
 import com.nrt.input.DevicePointer;
+import android.view.*;
 
 class CardboardStarView extends CardboardView
 {
@@ -44,5 +45,28 @@ class CardboardStarView extends CardboardView
 		DevicePointer.OnTouchEvent(e);
 		return true;//super.onTouchEvent(e);
 	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
+		// TODO: Implement this method
+		return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event)
+	{
+		// TODO: Implement this method
+		return super.onKeyUp(keyCode, event);
+	}
+
+	@Override
+	public boolean onGenericMotionEvent(MotionEvent event)
+	{
+		// TODO: Implement this method
+		return super.onGenericMotionEvent(event);
+	}
+	
+	
 }
 

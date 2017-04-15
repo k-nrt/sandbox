@@ -8,57 +8,23 @@ import com.nrt.render.BasicRender;
 import com.nrt.input.FramePointer;
 import com.nrt.basic.*;
 
-public class UiRoundButton implements UiItem
+public class UiRoundButton extends UiButton
 {
 	public final Float3 EnterCenter = new Float3();
 	public float EnterRadius = 0.0f;
 	public final Float3 LeaveCenter = new Float3();
 	public float LeaveRadius = 0.0f;
-
-	public FramePointer.Pointer[] Pointers = new FramePointer.Pointer[DevicePointer.Pointers.length];
-	public boolean[] Owners = new boolean[DevicePointer.Pointers.length];
-
-	public boolean EnableEnter = true;
-
-	public enum EStatus
-	{
-		Down,
-		Enter,
-		Move,
-		Leave,
-		Up,
-	}
-
-	public EStatus[] Status = new EStatus[DevicePointer.Pointers.length];
-
-	public int m_nbPointers = 0;
-	public int m_nbPrevPointers = 0;
-
+	
+	
 	public UiRoundButton(float x, float y, float radius)
 	{
-		//EnterCenter = new Float3(x, y, 0.0f);
-		//LeaveCenter = new Float3(x, y, 0.0f);
-		//EnterRadius = LeaveRadius = radius;
-
-		//this(
-
 		this( Float3.Local( x, y, 0.0f ), radius, Float3.Local( x, y, 0.0f ), radius );
-
 	}
 
 	public UiRoundButton(Float3 f3EnterCenter, float fEnterRadius, Float3 f3LeaveRadius, float fLeaveRadius)
 	{
+		super();
 		SetGeometry( f3EnterCenter, fEnterRadius, f3LeaveRadius, fLeaveRadius );
-		//EnterCenter.Set( f3EnterCenter );
-		//EnterRadius = fEnterRadius;
-		//LeaveCenter.Set( f3LeaveRadius );
-		//LeaveRadius = fLeaveRadius;
-		for (int i = 0 ; i < Pointers.length ; i++)
-		{
-			Pointers[i] = new FramePointer.Pointer();
-			Owners[i] = false;
-			Status[i] = EStatus.Up;
-		}
 	}
 
 	@Override
@@ -90,10 +56,6 @@ public class UiRoundButton implements UiItem
 			LeaveRadius*2.0f, LeaveRadius*2.0f );
 	}
 
-
-	
-	
-
 	public void SetGeometry(Float3 f3EnterCenter, float fEnterRadius, Float3 f3LeaveRadius, float fLeaveRadius)
 	{
 		EnterCenter.Set( f3EnterCenter );
@@ -108,6 +70,12 @@ public class UiRoundButton implements UiItem
 		SetGeometry( Float3.Local( x, y, 0.0f ), radius, Float3.Local( x, y, 0.0f ), radius );
 	}
 
+	public void SetGeometry(float x, float y, float radiusEnter, float radiusLeave)
+	{
+		SetGeometry( Float3.Local( x, y, 0.0f ), radiusEnter, Float3.Local( x, y, 0.0f ), radiusLeave );
+	}
+	
+	@Override
 	public boolean IsEnter(float x, float y)
 	{
 		x -= EnterCenter.X;
@@ -123,6 +91,7 @@ public class UiRoundButton implements UiItem
 		}
 	}
 
+	@Override
 	public boolean IsLeave(float x, float y)
 	{
 		x -= LeaveCenter.X;
@@ -137,72 +106,7 @@ public class UiRoundButton implements UiItem
 			return false;
 		}
 	}
-
-	public boolean OnDown(int id, FramePointer.Pointer pointer)
-	{
-		Pointers[id] = pointer;
-		Owners[id] = true;
-		Status[id] = EStatus.Down;
-		return true;
-	}
-
-	public boolean OnEnter(int id, FramePointer.Pointer pointer)
-	{
-		if( EnableEnter )
-		{
-			Pointers[id] = pointer;
-			Owners[id] = true;
-			Status[id] = EStatus.Enter;
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	public void OnMove(int id, FramePointer.Pointer pointer)
-	{
-		if( Owners[id] == true )
-		{
-			Pointers[id] = pointer;
-			Owners[id] = true;
-			Status[id] = EStatus.Move;
-		}				
-	}
-	public void OnLeave(int id, FramePointer.Pointer pointer)
-	{
-		if( Owners[id] )
-		{
-			Pointers[id] = pointer;
-			Owners[id] = false;
-			Status[id] = EStatus.Leave;			
-		}
-	}
-	public void OnUp(int id, FramePointer.Pointer pointer)
-	{
-		if( Owners[id] )
-		{
-			Pointers[id] = pointer;
-			Owners[id] = false;
-			Status[id] = EStatus.Up;
-		}
-	}
-
-	public void OnUpdate(float fElapsedTime)
-	{
-		m_nbPrevPointers = m_nbPointers;
-		m_nbPointers = 0;
-		for (int i = 0 ; i < Pointers.length ; i++)
-		{
-			if (Pointers[i].Down && Owners[i])
-			{
-				m_nbPointers++;
-			}
-		}
-		//System.Error.WriteLine( Status[0].toString() );
-	}
-
+	
 	public void OnRender(BasicRender br)
 	{
 		if (m_nbPrevPointers < m_nbPointers)
@@ -218,35 +122,5 @@ public class UiRoundButton implements UiItem
 			br.SetColor(0, 1, 0, 1);
 		}
 		br.Arc(EnterCenter.X, EnterCenter.Y, EnterRadius, 16);
-	}
-
-	public boolean IsPush()
-	{
-		if (m_nbPrevPointers <= 0 && m_nbPointers > 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;	
-		}
-	}
-
-	public boolean IsDown()
-	{
-		return (m_nbPointers > 0 ? true : false);
-	}
-
-	public boolean IsRelease()
-	{
-		if (m_nbPrevPointers > 0 && m_nbPointers <= 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;	
-		}
-
 	}
 }

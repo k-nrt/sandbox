@@ -253,7 +253,11 @@ implements CardboardView.StereoRenderer
 				continue;
 			}
 
-			br.Arc(pointer.Position.X, pointer.Position.Y, 64.0f, 0x00000000, 128.0f, color, 16);
+			float mmRadius = 12.0f;
+			float pixRadius = 0.5f*(mmRadius/25.4f)*((float)SubSystem.DisplayDPI);
+			
+			
+			br.Arc(pointer.Position.X, pointer.Position.Y, pixRadius*0.5f, 0x00000000, pixRadius, color, 16);
 		}
 
 		if (gfxc != null)
